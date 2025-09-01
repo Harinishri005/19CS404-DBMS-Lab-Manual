@@ -1,143 +1,179 @@
-# ER Diagram Workshop – Submission Template
+# Experiment 1: Entity-Relationship (ER) Diagram
 
-## Objective
-To understand and apply ER modeling concepts by creating ER diagrams for real-world applications.
+##  Objective:
+To understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application.
 
-## Purpose
-Gain hands-on experience in designing ER diagrams that represent database structure including entities, relationships, attributes, and constraints.
+##  Purpose:
+The purpose of this workshop is to gain hands-on experience in designing ER diagrams that visually represent the structure of a database including entities, relationships, attributes, and constraints.
 
----
 
-# Scenario A: City Fitness Club Management
+##  Choose One Scenario:
 
-**Business Context:**  
-FlexiFit Gym wants a database to manage its members, trainers, and fitness programs.
+### 🔹 Scenario 1: University Database
+Design a database to manage students, instructors, programs, courses, and student enrollments. Include prerequisites for courses.
 
-**Requirements:**  
-- Members register with name, membership type, and start date.  
-- Each member can join multiple programs (Yoga, Zumba, Weight Training).  
-- Trainers assigned to programs; a program may have multiple trainers.  
-- Members may book personal training sessions with trainers.  
-- Attendance recorded for each session.  
-- Payments tracked for memberships and sessions.
+**User Requirements:**
+- Academic programs grouped under departments.
+- Students have admission number, name, DOB, contact info.
+- Instructors with staff number, contact info, etc.
+- Courses have number, name, credits.
+- Track course enrollments by students and enrollment date.
+- Add support for prerequisites (some courses require others).
 
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
 
-### Entities and Attributes
+###  Scenario 2: Hospital Database
+Design a database for patient management, appointments, medical records, and billing.
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-
-### Relationships and Constraints
-
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
-### Assumptions
-- 
-- 
-- 
+**User Requirements:**
+- Patient details including contact and insurance.
+- Doctors and their departments, contact info, specialization.
+- Appointments with reason, time, patient-doctor link.
+- Medical records with treatments, diagnosis, test results.
+- Billing and payment details for each appointment.
 
 ---
 
-# Scenario B: City Library Event & Book Lending System
+##  Tasks:
+1. Identify entities, relationships, and attributes.
+2. Draw the ER diagram using any tool (draw.io, dbdiagram.io, hand-drawn and scanned).
+3. Include:
+   - Cardinality & participation constraints
+   - Prerequisites for University OR Billing for Hospital
+4. Explain:
+   - Why you chose the entities and relationships.
+   - How you modeled prerequisites or billing.
 
-**Business Context:**  
-The Central Library wants to manage book lending and cultural events.
+# EX:1  ER DIAGRAM
 
-**Requirements:**  
-- Members borrow books, with loan and return dates tracked.  
-- Each book has title, author, and category.  
-- Library organizes events; members can register.  
-- Each event has one or more speakers/authors.  
-- Rooms are booked for events and study.  
-- Overdue fines apply for late returns.
+## NAME: HARINISHRI S
+## REG.NO : 212223090008
 
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+## Scenario Chosen:
+Hospital
 
-### Entities and Attributes
+## ER Diagram:
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+![ER git](https://github.com/user-attachments/assets/0bf66402-d7db-43b3-a1f1-cbe54362a80f)
 
-### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+## Entities and Attributes:
 
-### Assumptions
-- 
-- 
-- 
+### Department:
 
----
+Dept_ID (Primary Key)
 
-# Scenario C: Restaurant Table Reservation & Ordering
+Name
 
-**Business Context:**  
-A popular restaurant wants to manage reservations, orders, and billing.
+Head
 
-**Requirements:**  
-- Customers can reserve tables or walk in.  
-- Each reservation includes date, time, and number of guests.  
-- Customers place food orders linked to reservations.  
-- Each order contains multiple dishes; dishes belong to categories (starter, main, dessert).  
-- Bills generated per reservation, including food and service charges.  
-- Waiters assigned to serve reservations.
+### Doctor:
 
-### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+Doctor_ID (Primary Key)
 
-### Entities and Attributes
+Name
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+Contact_No
 
-### Relationships and Constraints
+Email
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+Specialization
 
-### Assumptions
-- 
-- 
-- 
+Work_Schedule
 
----
+### Patient:
 
-## Instructions for Students
+Patient_ID (Primary Key)
 
-1. Complete **all three scenarios** (A, B, C).  
-2. Identify entities, relationships, and attributes for each.  
-3. Draw ER diagrams using **draw.io / diagrams.net** or hand-drawn & scanned.  
-4. Fill in all tables and assumptions for each scenario.  
-5. Export the completed Markdown (with diagrams) as **a single PDF**
+Name
+
+DOB
+
+Gender
+
+Address
+
+Contact_No
+
+Email
+
+Work_Schedule
+
+### Appointments:
+
+App_ID (Primary Key)
+
+Date
+
+Time
+
+Reason
+
+Add_Notes
+
+### Medical Records:
+
+Med_Rec_ID (Primary Key)
+
+Diagnosis
+
+Medications
+
+Treatment
+
+Test Results
+
+
+
+## Relationships and Constraints:
+
+### Specialized (Department → Doctor):
+
+One Department can have many Doctors.
+
+A Doctor belongs to one Department. (1:N cardinality)
+
+### Assigned (Doctor → Appointments):
+
+One Doctor can be assigned to multiple Appointments.
+
+An Appointment is assigned to one Doctor. (1:N cardinality)
+
+### Book (Patient → Appointments):
+
+One Patient can book multiple Appointments.
+
+Each Appointment is booked by one Patient. (1:N cardinality)
+
+### Contain (Patient → Medical Records):
+
+One Patient can have multiple Medical Records.
+
+Each Medical Record belongs to one Patient. (1:N cardinality)
+
+### Check (Doctor → Medical Records):
+
+One Doctor can check multiple Medical Records.
+
+Each Medical Record is checked by one Doctor. (1:N cardinality)
+
+## Extension (Prerequisite / Billing):
+
+### Billing (Extension Idea):
+Billing could be modeled by adding a new entity called Billing with attributes like Bill_ID, Amount, Payment_Method, and Payment_Status.
+It would have relationships with Appointments (each appointment generates a bill) and Patients (patients are billed for their appointments).
+
+## Design Choices:
+
+1. I chose the main entities such as Doctor, Patient, Appointments, Department, and Medical Records because they represent the core operations of a hospital.
+
+2. Relationships like Specialized, Assigned, Book, and Contain were added to represent the real-world interaction between these entities.
+
+3. I assumed that each appointment is uniquely identified and linked to one doctor and one patient.
+
+4. Work schedules for both doctors and patients are stored to manage availability.
+
+5. Medical records are detailed to include diagnosis, medications, treatment, and test results for better patient history tracking.
+
+## Result: 
+
+Thus, the ER diagram for the hospital management system was successfully designed, and the entities, relationships, and constraints were clearly represented.
